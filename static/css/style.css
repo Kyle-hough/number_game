@@ -1,0 +1,44 @@
+* {
+    margin: 20px;
+    padding: 5px;
+    font-size: larger;
+}
+
+.container {
+    text-align: center;
+}
+
+.margin {
+    margin-bottom: 10px;
+}
+
+.box {
+    padding: 50px;
+    margin: 20px;
+    margin: auto;
+    border: 2px solid black;
+    width: fit-content;
+    align-items: center;
+}
+
+.color {
+    background-color: red;
+}
+
+.winner {
+    background-color: green;
+}
+
+.btn {
+    box-shadow: 2px 2px black;
+    margin-top: 10px;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: lightgrey;
+    text-decoration: none;
+    color: black;
+    /* padding: 5px; */
+}
+.srch {
+    border: 2px solid black
+}

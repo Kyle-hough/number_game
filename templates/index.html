@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <title>Number Game</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="margin">Welcome to the Great Number Game!!!</h1>
+        <p class="margin">I am thinking of a number between 1 and 100</p>
+        <p class="margin">Take a guess</p>
+        <form action='/guess' method="post">
+            <div>
+                <input type="text" name='guess'class = "srch">
+            </div>
+            <input type="submit" value="Guess" class="btn">
+        </form>
+        {% if 'guess' in session: %}
+        {{session['guess']}}{{session['num']}}
+            {% if session['guess'] == session['num'] %}
+                <div class="winner box">
+                    <h2>You guessed correctly!</h2>
+                    <a href='/clear' class="btn">Play again?</a>
+                    <!-- <button action='/clear' class="btn">Play again?</button> -->
+                </div>
+            {% endif %}
+            {% if session['guess'] > session['num'] %}
+                <div class="box color">
+                    <h2>Your guess was too high!</h2>
+                </div>
+            {% endif%}
+            {% if session['guess'] < session['num'] %}
+                <div class="box color">
+                    <h2>Your guess was too low!</h2>
+                </div>
+                {% endif%}
+        {% endif %}
+    </div>
+</body>
+</html>
